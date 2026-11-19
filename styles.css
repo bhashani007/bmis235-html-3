@@ -9,13 +9,13 @@
    so the menu and the pages look like one brand.
    ===================================================================== */
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
+body { 
+    font-family: Georgia, "Times New Roman", serif; 
     background-color: #FEFDD6;
     color: #CA365D;
     margin: 0;
     padding: 0 20px 40px 20px;
-}
+} 
 
 /* the menu at the top of every page */
 nav {
