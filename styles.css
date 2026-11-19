@@ -18,8 +18,8 @@ body {
 }
 
 /* Only paragraphs get this font */
-p {
-    font-family: Georgia, serif;
+p { 
+    font-family: Georgia, serif; 
     max-width: 600px;
     margin: 10px auto;
     font-size: 18px;
