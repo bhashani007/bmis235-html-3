@@ -10,16 +10,16 @@
    ===================================================================== */
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background-color: #f4efe6;
-    color: #2b2b2b;
+    font-family: "AquilineTwo", Georgia, serif;
+    background-color: #FEFDD6;
+    color: #CA365D;
     margin: 0;
     padding: 0 20px 40px 20px;
 }
 
 /* the menu at the top of every page */
 nav {
-    background-color: #2b5d8c;
+    background-color: #CA365D;
     padding: 14px;
     text-align: center;
 }
@@ -41,12 +41,15 @@ nav a {
 h1 {
     color: #2b5d8c;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
+    text-decoration: underline;
+    text-decoration-color: #CA365D;
+    text-underline-offset: 8px;
 }
 
 p {
     max-width: 600px;
-    margin: 20px auto;
+    margin: 10px auto; /* Reduced from 20px to tighten spacing */
     font-size: 18px;
     line-height: 1.5;
 }
