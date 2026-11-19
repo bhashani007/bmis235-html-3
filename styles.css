@@ -19,13 +19,13 @@ body {
 
 /* Only paragraphs get this font */
 p {
-    font-family: "Times New Roman", Georgia, serif;
+    font-family: Georgia, serif;
     max-width: 600px;
     margin: 10px auto;
     font-size: 18px;
     line-height: 1.5;
-    text-align: center; 
-}
+    text-align: center;
+} 
 
 /* the menu at the top of every page */
 nav {
