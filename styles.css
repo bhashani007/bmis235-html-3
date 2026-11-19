@@ -10,22 +10,12 @@
    ===================================================================== */
 
 body {
-    font-family: "AquilineTwo", Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     background-color: #FEFDD6;
     color: #CA365D;
     margin: 0;
     padding: 0 20px 40px 20px;
 }
-
-/* Only paragraphs get this font */
-p { 
-    font-family: Georgia, serif; 
-    max-width: 600px;
-    margin: 10px auto;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: center;
-} 
 
 /* the menu at the top of every page */
 nav {
