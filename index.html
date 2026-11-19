@@ -35,7 +35,411 @@
      This box is empty on purpose. In Part 7 you paste an interactive
      graphic BETWEEN the opening <div> and the closing </div> below.
      ===================================================================== -->
-<div class="showcase"></div>
+<div class="showcase"><!-- HTML: Creates the animal tabs and the area for the flipping fun fact cards. -->
+<div class="animal-graphic">
+  <div class="animal-heading">
+    <div class="animal-title">My Favorite Animals ♡</div>
+    <div class="animal-subtitle">
+      Choose an animal and click a card to discover a fun fact!
+    </div>
+  </div>
+
+  <div class="animal-tabs">
+    <button class="animal-tab active" data-animal="cats">
+      🐱 Cats
+    </button>
+    <button class="animal-tab" data-animal="horses">
+      🐴 Horses
+    </button>
+    <button class="animal-tab" data-animal="wolves">
+      🐺 Wolves
+    </button>
+  </div>
+
+  <div class="animal-cards"></div>
+
+  <div class="animal-bottom">
+    Click a card again to flip it back! ♡
+  </div>
+</div>
+
+<!-- CSS: Adds the cream and pink design, card flip animation, and mobile layout. -->
+<style>
+.showcase .animal-graphic {
+  background: #FEFDD6;
+  color: #482B35;
+  font-family: Arial, sans-serif;
+  border-radius: 20px;
+  padding: 20px 12px;
+  max-width: 850px;
+  width: 100%;
+  max-height: 495px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.showcase .animal-graphic * {
+  box-sizing: border-box;
+}
+
+.showcase .animal-heading {
+  text-align: center;
+  margin-bottom: 17px;
+}
+
+.showcase .animal-title {
+  color: #CA365D;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.showcase .animal-subtitle {
+  font-size: 12px;
+}
+
+.showcase .animal-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.showcase .animal-tab {
+  background: white;
+  color: #CA365D;
+  border: 2px solid #CA365D;
+  border-radius: 25px;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.showcase .animal-tab.active,
+.showcase .animal-tab:hover {
+  background: #CA365D;
+  color: white;
+}
+
+.showcase .animal-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.showcase .flip-card {
+  height: 230px;
+  border: none;
+  background: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+  padding: 0;
+  min-width: 0;
+  font-family: inherit;
+}
+
+.showcase .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.65s;
+}
+
+.showcase .flip-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.showcase .card-front,
+.showcase .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.showcase .card-front {
+  background: white;
+  border: 2px solid #CA365D;
+  color: #482B35;
+}
+
+.showcase .card-back {
+  background: #CA365D;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.showcase .card-emoji {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.showcase .card-label {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.showcase .card-hint {
+  color: #CA365D;
+  font-size: 11px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.showcase .card-number {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.showcase .card-fact {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.showcase .animal-bottom {
+  text-align: center;
+  color: #CA365D;
+  font-size: 12px;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+.showcase .flip-card:focus-visible,
+.showcase .animal-tab:focus-visible {
+  outline: 3px solid #482B35;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .showcase .animal-graphic {
+    padding: 15px 7px;
+  }
+
+  .showcase .animal-heading {
+    margin-bottom: 12px;
+  }
+
+  .showcase .animal-tabs {
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+
+  .showcase .animal-tab {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .showcase .animal-cards {
+    gap: 5px;
+  }
+
+  .showcase .flip-card {
+    height: 260px;
+  }
+
+  .showcase .card-front,
+  .showcase .card-back {
+    padding: 5px;
+    border-radius: 9px;
+  }
+
+  .showcase .card-emoji {
+    font-size: 30px;
+  }
+
+  .showcase .card-label {
+    font-size: 12px;
+  }
+
+  .showcase .card-hint {
+    font-size: 9px;
+  }
+
+  .showcase .card-number {
+    font-size: 9px;
+    margin-bottom: 7px;
+  }
+
+  .showcase .card-fact {
+    font-size: clamp(9px, 2.6vw, 12px);
+    line-height: 1.3;
+  }
+
+  .showcase .animal-bottom {
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase .card-inner,
+  .showcase .animal-tab {
+    transition: none;
+  }
+}
+</style>
+
+<!-- JavaScript: Displays your original facts and flips cards when clicked. -->
+<script>
+(function () {
+  const root = document.currentScript.closest(".showcase");
+  const tabs = root.querySelectorAll(".animal-tab");
+  const cardArea = root.querySelector(".animal-cards");
+
+  const facts = {
+    cats: [
+      {
+        emoji: "🌙",
+        title: "Night Vision",
+        fact: "Cats have night vision that's five to six times better than a humans!"
+      },
+      {
+        emoji: "☀️",
+        title: "Sun Lovers",
+        fact: "A cat's natural body temperature is around 102 degrees. To help stay warm, they love to lay in the sun all day!"
+      },
+      {
+        emoji: "💨",
+        title: "Fast Cats",
+        fact: "Cats can run at up to 30 miles per hour!"
+      }
+    ],
+
+    horses: [
+      {
+        emoji: "🐎",
+        title: "Mustang History",
+        fact: "All mustang herds in America actually originated from domesticated horses in the 16th century! Mustangs are not native to North America, but were instead brought from Europe by Spanish explorers."
+      },
+      {
+        emoji: "👀",
+        title: "Big Eyes",
+        fact: "Horses have the biggest eyes of any land mammal."
+      },
+      {
+        emoji: "🐾",
+        title: "Horse Hooves",
+        fact: "Horses' hooves are made of keratin, just like human hair and nails! If a horse is domesticated, their owner usually has to clip them down."
+      }
+    ],
+
+    wolves: [
+      {
+        emoji: "💙",
+        title: "Blue Eyes",
+        fact: "Wolves are all born with blue eyes, which change to a yellow/orange color as they grow up!"
+      },
+      {
+        emoji: "🌕",
+        title: "Wolf Howls",
+        fact: "Contrary to popular belief, wolves don't actually howl at the moon. This idea came from ancient mythologies around the world."
+      },
+      {
+        emoji: "🐺",
+        title: "Pack Hunting",
+        fact: "While hunting, each wolf in the pack assumes a different role, making their hunt more successful."
+      }
+    ]
+  };
+
+  function showCards(animal) {
+    cardArea.replaceChildren();
+
+    facts[animal].forEach((item, index) => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "flip-card";
+      card.setAttribute("aria-pressed", "false");
+      card.setAttribute("aria-label", item.title + ": reveal fact");
+
+      const inner = document.createElement("div");
+      inner.className = "card-inner";
+
+      const front = document.createElement("div");
+      front.className = "card-front";
+
+      const emoji = document.createElement("div");
+      emoji.className = "card-emoji";
+      emoji.textContent = item.emoji;
+
+      const label = document.createElement("div");
+      label.className = "card-label";
+      label.textContent = item.title;
+
+      const hint = document.createElement("div");
+      hint.className = "card-hint";
+      hint.textContent = "CLICK TO FLIP ↻";
+
+      front.append(emoji, label, hint);
+
+      const back = document.createElement("div");
+      back.className = "card-back";
+
+      const number = document.createElement("div");
+      number.className = "card-number";
+      number.textContent = "FUN FACT " + (index + 1);
+
+      const fact = document.createElement("div");
+      fact.className = "card-fact";
+      fact.textContent = item.fact;
+
+      back.append(number, fact);
+      inner.append(front, back);
+      card.append(inner);
+
+      card.addEventListener("click", function () {
+        const flipped = card.classList.toggle("flipped");
+        card.setAttribute("aria-pressed", String(flipped));
+        card.setAttribute(
+          "aria-label",
+          flipped
+            ? item.title + ": " + item.fact + " Click to flip back."
+            : item.title + ": reveal fact"
+        );
+      });
+
+      cardArea.append(card);
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.setAttribute(
+      "aria-pressed",
+      String(tab.classList.contains("active"))
+    );
+
+    tab.addEventListener("click", function () {
+      tabs.forEach(other => {
+        other.classList.remove("active");
+        other.setAttribute("aria-pressed", "false");
+      });
+
+      tab.classList.add("active");
+      tab.setAttribute("aria-pressed", "true");
+
+      showCards(tab.dataset.animal);
+    });
+  });
+
+  showCards("cats");
+})();
+</script> </div>
 
 <!-- Footer: fill in your name -->
 <footer>Built by BLINA HASHANI &middot; BMIS 235</footer>
