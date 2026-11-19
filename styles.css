@@ -17,6 +17,16 @@ body {
     padding: 0 20px 40px 20px;
 }
 
+/* Only paragraphs get this font */
+p {
+    font-family: "Times New Roman", Georgia, serif;
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
 /* the menu at the top of every page */
 nav {
     background-color: #CA365D;
