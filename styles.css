@@ -50,7 +50,7 @@ h1 {
 p {
     max-width: 600px;
     margin: 10px auto; /* Reduced from 20px to tighten spacing */
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5; 
 }
 
