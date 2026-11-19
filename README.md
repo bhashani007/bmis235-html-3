@@ -1,7 +1,7 @@
 # BMIS 235 · HTML-3 · Links + CSS: Your Own Site
 
-**Name:** YOUR NAME
-**GU username:** YOUR-GU-USERNAME
+**Name:** Blina Hashani
+**GU username:** bhashani@zagmail.gonzaga.edu 
 
 My live page: https://YOUR-GITHUB-USERNAME.github.io/bmis235-html-3/
 
